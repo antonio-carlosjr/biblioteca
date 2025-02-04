@@ -1,2 +1,3 @@
 B,Admin,admin@biblioteca.com,admin123,(31) 99999-9999,0
-P,Gabriel,gabs@gmail.com,123123,peniano
+P,Gabriel,gabs@gmail.com,123123,sistemas
+A,carlos,carlos@gmail.com,123123,12345,Sistemas

@@ -1,10 +1,13 @@
-package biblioteca; 
+package biblioteca;
+
+import java.io.Serializable;
 
 /**
  * Classe que representa um Aluno no sistema da biblioteca.
- * Alunos têm um limite de até 2 empréstimos simultâneos.
+ * Alunos podem ter até 2 empréstimos simultâneos.
  */
-public class Aluno extends Usuario {
+public class Aluno extends Usuario implements Serializable {
+    private static final long serialVersionUID = 1L;
     private String matricula;
     private String curso;
     private static final int LIMITE_EMPRESTIMOS = 2;
@@ -24,59 +27,29 @@ public class Aluno extends Usuario {
         this.curso = curso;
     }
 
-    /**
-     * Obtém a matrícula do aluno.
-     * 
-     * @return Matrícula do aluno.
-     */
     public String getMatricula() {
         return matricula;
     }
 
-    /**
-     * Define uma nova matrícula para o aluno.
-     * 
-     * @param matricula Nova matrícula do aluno.
-     */
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
-    /**
-     * Obtém o curso do aluno.
-     * 
-     * @return Curso do aluno.
-     */
     public String getCurso() {
         return curso;
     }
 
-    /**
-     * Define um novo curso para o aluno.
-     * 
-     * @param curso Novo curso do aluno.
-     */
     public void setCurso(String curso) {
         this.curso = curso;
     }
 
-    /**
-     * Retorna o limite de empréstimos para alunos.
-     * 
-     * @return O limite de empréstimos (2).
-     */
     @Override
     public int getLimiteEmprestimos() {
         return LIMITE_EMPRESTIMOS;
     }
 
-    /**
-     * Representação textual do aluno.
-     * 
-     * @return String formatada com informações do aluno.
-     */
     @Override
     public String toString() {
-        return super.toString() + " | 🎓 Matrícula: " + matricula + " | 📚 Curso: " + curso;
+        return super.toString() + " | Matrícula: " + matricula + " | Curso: " + curso + " | Limite de empréstimos: " + LIMITE_EMPRESTIMOS;
     }
 }
